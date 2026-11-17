@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaspol Shoes - Toko Sepatu Terbaik & Terpercaya</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-600 text-white p-2 rounded-xl shadow-md">
+                        <i class="fa-solid fa-shoe-prints text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-slate-900">GASPOL <span class="text-brand-600">SHOES</span></span>
+                        <p class="text-[11px] text-slate-500 font-medium -mt-1">Melangkah Lebih Cepat & Gaya</p>
+                    </div>
+                </div>
+
+                <!-- Menu Kanan -->
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="#katalog" class="hidden md:inline-block text-sm font-semibold text-slate-600 hover:text-brand-600 transition px-3 py-2">Katalog</a>
+                    <a href="#daftar-harga" class="hidden md:inline-block text-sm font-semibold text-slate-600 hover:text-brand-600 transition px-3 py-2">Daftar Harga</a>
+                    <a href="#info-toko" class="hidden md:inline-block text-sm font-semibold text-slate-600 hover:text-brand-600 transition px-3 py-2">Info Pemesanan</a>
+                    
+                    <!-- Tombol Admin -->
+                    <button onclick="openAdminAuthModal()" id="btn-admin-nav" class="flex items-center space-x-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold px-3.5 py-2.5 rounded-xl transition shadow-sm">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Admin</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-slate-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center space-x-2 bg-brand-600/20 border border-brand-500/30 text-brand-400 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Koleksi Terbaru 2026</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                        Gaspol Gayamu dengan <span class="text-brand-500">Sepatu Impian!</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                        Kualitas premium, nyaman dipakai seharian. Bisa beli langsung di toko atau pesan online diantar sampai depan rumah!
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+                        <a href="#katalog" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition text-center">
+                            Lihat Koleksi Sepatu
+                        </a>
+                        <a href="https://wa.me/6289665165123?text=Halo%20Admin%20Gaspol%20Shoes,%20saya%20ingin%20bertanya%20tentang%20produk%20sepatu." target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Chat WA: 0896-6516-5123</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Highlight Info Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-800/80 backdrop-blur border border-slate-700 p-5 rounded-2xl">
+                        <div class="w-10 h-10 bg-brand-500/20 text-brand-400 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-truck-fast text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Beli di Toko / Antar Rumah</h3>
+                        <p class="text-slate-400 text-sm mt-1">Datang langsung ke toko Gaspol Shoes atau pesan online & kurir kami antar sampai rumah.</p>
+                    </div>
+                    <div class="bg-slate-800/80 backdrop-blur border border-slate-700 p-5 rounded-2xl">
+                        <div class="w-10 h-10 bg-sky-500/20 text-sky-400 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-wallet text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Bayar via DANA / Cash</h3>
+                        <p class="text-slate-400 text-sm mt-1">Transaksi mudah & aman! Mendukung pembayaran transfer DANA maupun Tunai (Cash/COD).</p>
+                    </div>
+                    <div class="bg-slate-800/80 backdrop-blur border border-slate-700 p-5 rounded-2xl">
+                        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Waktu Pemesanan Fleksibel</h3>
+                        <p class="text-slate-400 text-sm mt-1">Toko buka 09.00 - 21.00 WIB. Pemesanan online via WhatsApp dilayani 24 Jam!</p>
+                    </div>
+                    <div class="bg-slate-800/80 backdrop-blur border border-slate-700 p-5 rounded-2xl">
+                        <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-ruler-combined text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Ukuran Lengkap 38 - 44</h3>
+                        <p class="text-slate-400 text-sm mt-1">Tersedia berbagai ukuran dengan transparansi harga & stok real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Panel Admin (Tersembunyi secara default, muncul jika login token 1234 berhasil) -->
+    <section id="admin-panel" class="hidden bg-slate-900 border-b-4 border-brand-500 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-700">
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-emerald-500 text-slate-950 text-xs font-extrabold px-2.5 py-0.5 rounded-md">MODE ADMIN AKTIF</span>
+                        <h2 class="text-xl sm:text-2xl font-bold">Pengaturan Produk Gaspol Shoes</h2>
+                    </div>
+                    <p class="text-slate-400 text-sm mt-1">Tambah, ubah foto, harga, ukuran, atau hapus stok sepatu secara langsung.</p>
+                </div>
+                <div class="flex items-center space-x-3 w-full sm:w-auto">
+                    <button onclick="openProductFormModal()" class="flex-1 sm:flex-none bg-brand-600 hover:bg-brand-500 text-white font-semibold px-4 py-2.5 rounded-xl text-sm flex items-center justify-center space-x-2 transition">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Tambah Sepatu</span>
+                    </button>
+                    <button onclick="resetDefaultData()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-3.5 py-2.5 rounded-xl text-sm transition" title="Reset ke data awal">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </button>
+                    <button onclick="logoutAdmin()" class="bg-rose-600/20 hover:bg-rose-600 text-rose-400 hover:text-white border border-rose-600/40 font-semibold px-4 py-2.5 rounded-xl text-sm transition">
+                        Keluar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabel Manajemen Produk Admin -->
+            <div class="mt-6 overflow-x-auto bg-slate-800 rounded-2xl border border-slate-700">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-xs uppercase text-slate-400 bg-slate-800/50">
+                            <th class="p-4">Foto & Nama Sepatu</th>
+                            <th class="p-4">Harga Dasar</th>
+                            <th class="p-4">Harga Big Size (43-44)</th>
+                            <th class="p-4">Stok Total</th>
+                            <th class="p-4 text-right">Aksi Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-product-list" class="divide-y divide-slate-700 text-sm">
+                        <!-- Diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Sepatu -->
+    <main id="katalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Katalog Sepatu Pilihan</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-1">Pilih ukuran untuk melihat harga pasti, lalu klik Pesan via WhatsApp.</p>
+            </div>
+            <!-- Filter Pencarian -->
+            <div class="relative w-full sm:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="search-input" onkeyup="renderProducts()" placeholder="Cari nama sepatu..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+            </div>
+        </div>
+
+        <!-- Grid Produk -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Kartu sepatu dirender oleh JavaScript -->
+        </div>
+    </main>
+
+    <!-- Tabel List Harga Berdasarkan Sepatu & Ukuran -->
+    <section id="daftar-harga" class="bg-white border-y border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-wider">Transparansi Harga</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Daftar Harga Sepatu & Ukuran</h2>
+                <p class="text-slate-600 text-sm mt-2">Rincian harga lengkap berdasarkan model sepatu dan kategori ukuran (Reguler 38-42 & Big Size 43-44).</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                            <th class="p-4">Nama Model Sepatu</th>
+                            <th class="p-4">Ukuran Tersedia</th>
+                            <th class="p-4">Harga Ukuran 38 - 42</th>
+                            <th class="p-4">Harga Ukuran 43 - 44</th>
+                            <th class="p-4 text-center">Status Stok</th>
+                        </tr>
+                    </thead>
+                    <tbody id="price-list-table" class="divide-y divide-slate-200 text-sm">
+                        <!-- Diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi Waktu, Bentuk Pemesanan & Pembayaran -->
+    <section id="info-toko" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-6 sm:p-10 text-white shadow-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Kolom 1: Waktu & Bentuk Pemesanan -->
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 bg-brand-600 px-3 py-1 rounded-lg text-xs font-bold">
+                        <i class="fa-solid fa-store"></i>
+                        <span>CARA & WAKTU PEMESANAN</span>
+                    </div>
+                    <h3 class="text-xl font-bold">Beli Langsung atau Antar Rumah</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                            <span><strong>Datang Langsung ke Toko:</strong> Buka setiap hari pukul <strong>09.00 – 21.00 WIB</strong>. Bisa coba ukuran sepuasnya di toko Gaspol Shoes.</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                            <span><strong>Pemesanan Online (Antar Rumah):</strong> Order via WhatsApp <strong>24 Jam</strong>. Pengiriman kurir dilakukan setiap hari pukul <strong>09.00 – 20.00 WIB</strong> sampai depan rumah Anda.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 2: Metode Pembayaran -->
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 bg-sky-600 px-3 py-1 rounded-lg text-xs font-bold">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        <span>METODE PEMBAYARAN</span>
+                    </div>
+                    <h3 class="text-xl font-bold">DANA & Cash (Tunai)</h3>
+                    <div class="space-y-3 text-sm text-slate-300">
+                        <div class="bg-slate-800/90 border border-slate-700 p-3.5 rounded-xl flex items-center space-x-3">
+                            <div class="bg-sky-500 text-white font-extrabold text-xs px-2.5 py-1.5 rounded-lg">DANA</div>
+                            <div>
+                                <p class="font-bold text-white">Transfer E-Wallet DANA</p>
+                                <p class="text-xs text-slate-400">Nomor DANA akan dikonfirmasi admin di WA: 089665165123</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/90 border border-slate-700 p-3.5 rounded-xl flex items-center space-x-3">
+                            <div class="bg-emerald-600 text-white font-extrabold text-xs px-2.5 py-1.5 rounded-lg">CASH</div>
+                            <div>
+                                <p class="font-bold text-white">Tunai / Bayar di Tempat (COD)</p>
+                                <p class="text-xs text-slate-400">Bayar tunai langsung di kasir toko atau ke kurir saat barang sampai.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom 3: Kontak Cepat WA -->
+                <div class="bg-slate-800/70 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Butuh Bantuan Ukuran?</h3>
+                        <p class="text-sm text-slate-300 mt-2">Konsultasikan ukuran kaki Anda atau tanyakan promo ongkir langsung kepada admin resmi Gaspol Shoes.</p>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-xs text-slate-400 mb-1">WhatsApp Resmi Toko:</p>
+                        <p class="text-2xl font-extrabold text-brand-400 tracking-wide mb-4">0896-6516-5123</p>
+                        <a href="https://wa.me/6289665165123?text=Halo%20Gaspol%20Shoes,%20saya%20mau%20tanya%20stok%20sepatu" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Hubungi WhatsApp Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-bold text-slate-800">GASPOL SHOES</p>
+            <p class="mt-1">Order & Layanan Pelanggan WA: <a href="https://wa.me/6289665165123" target="_blank" class="text-brand-600 font-semibold hover:underline">089665165123</a> | Pembayaran: DANA & Cash</p>
+            <p class="mt-2 text-xs text-slate-400">&copy; 2026 Gaspol Shoes. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- MODAL 1: FORM PEMESANAN WHATSAPP           -->
+    <!-- ========================================== -->
+    <div id="order-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                <h3 class="text-lg font-extrabold text-slate-900">Form Pemesanan Sepatu</h3>
+                <button onclick="closeOrderModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <f
